@@ -1,9 +1,11 @@
+import { Suit } from "./suit";
+
 export class PlayingCard {
-  suitName: number;
+  suit: Suit;
   faceValueName: number;
 
-  constructor(suitName:number, faceValueName:number) {
-    this.suitName = suitName;
+  constructor(suit:Suit, faceValueName:number) {
+    this.suit = suit;
     this.faceValueName = faceValueName;
   }
 }
