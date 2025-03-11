@@ -1,0 +1,1 @@
+export const suitNames = ["clubs", "diamonds", "hearts", "spades"]

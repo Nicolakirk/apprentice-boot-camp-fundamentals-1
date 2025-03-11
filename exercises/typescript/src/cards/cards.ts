@@ -3,37 +3,24 @@
 // the project's root directory.
 
 import { PlayingCard } from "./playing-card";
+import { PlayingCardDeck } from "./playing-card-deck";
 import { Suit } from "./suit";
+import { suitNames } from "./suit-names";
 
 export class Cards {
   getCards(): string[] {
     const result: string[] = [];
-    const deck: PlayingCard[] = [];
+    const deck = new PlayingCardDeck;
 
-    for (let suit = 0; suit < 4; suit++) {
+    suitNames.forEach((suitName) => {
       for (let faceValue = 0; faceValue < 13; faceValue++) {
-        let suitName: string;
-        switch (suit) {
-          case 0:
-            suitName = "clubs";
-            break;
-          case 1:
-            suitName = "diamonds";
-            break;
-          case 2:
-            suitName = "hearts";
-            break;
-          case 3:
-            suitName = "spades";
-            break;
-          default:
-            throw new Error(
-              "Something went wrong ")
-        }
+        
         const newSuit = new Suit(suitName);
         const playingCard = new PlayingCard(newSuit, faceValue);
         deck.push(playingCard);
       }
+    })
+      
 
       let cardNumber = 0;
 
