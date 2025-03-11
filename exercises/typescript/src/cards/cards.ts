@@ -10,15 +10,7 @@ import { suitNames } from "./suit-names";
 export class Cards {
   getCards(): string[] {
     const result: string[] = [];
-    const deck: PlayingCard[] = [];
-
-    suitNames.forEach((suitName) => {
-      for (let faceValue = 0; faceValue < 13; faceValue++) {
-        const newSuit = new Suit(suitName);
-        const playingCard = new PlayingCard(newSuit, faceValue);
-        deck.push(playingCard);
-      }
-    });
+    const deck = new PlayingCardDeck().playingCards;
 
     let cardNumber = 0;
 
