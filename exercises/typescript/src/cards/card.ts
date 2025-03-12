@@ -1,8 +1,4 @@
-import { AnimalCard } from "./animal-card"
-
-export interface Card {
-
-snap(otherCard: Card): boolean
-toString(): string
-
+export abstract class Card {
+  abstract snap(otherCard: Card): boolean;
+  abstract toString(): string;
 }

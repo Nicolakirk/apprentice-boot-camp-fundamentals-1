@@ -3,10 +3,10 @@ import { AnimalCard } from "./animal-card"
 import { Card } from "./card"
 import { Deck } from "./deck"
 
-export class AnimalDeck implements Deck {
-  private readonly cards: AnimalCard[]
+export class AnimalDeck extends Deck {
 
   constructor() {
+    super()
     this.cards = []
 
     for (const animal in animals) {
@@ -15,31 +15,4 @@ export class AnimalDeck implements Deck {
     }
   }
 
-  getCards(): string[] {
-    const result: string[] = []
-
-    for (let i = 0; i < this.cards.length; i++) {
-      const card: AnimalCard = this.cards[i]
-      result.push(card.toString())
-    }
-
-    return result
-  }
-
-  shuffle() {
-    for (let i = 0; i < this.cards.length; i++) {
-      const indexA = Math.floor(Math.random() * i)
-      const indexB = i
-
-      const valueA = this.cards[indexA]
-      const valueB = this.cards[indexB]
-
-      this.cards[indexA] = valueB
-      this.cards[indexB] = valueA
-    }
-  }
-
-  deal(): Card {
-    return this.cards.splice(0, 1)[0]
-  }
 }

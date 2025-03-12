@@ -4,19 +4,16 @@
 
 import { PlayingCard } from "./playing-card";
 import { PlayingCardDeck } from "./playing-card-deck";
-import { Suit } from "./suit";
-import { suitNames } from "./suit-names";
-
 export class Cards {
   getCards(): string[] {
     const result: string[] = [];
-    const deck = new PlayingCardDeck().playingCards;
+    const deck = new PlayingCardDeck();
 
-    let cardNumber = 0;
+    let cardNumber = 0
 
-    for (const card of deck) {
+    while (deck.hasCards()) {
       let faceValueName: string;
-
+      const card = deck.getCard() as PlayingCard
       switch (card.faceValueName) {
         case 0:
           faceValueName = "ace";
