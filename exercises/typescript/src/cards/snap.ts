@@ -2,6 +2,7 @@ import readline from "readline"
 import { AnimalDeck } from "./animal-deck"
 
 import { Card } from "./card"
+import { Deck } from "./deck"
 
 // to execute the runnable code in this file, use the command
 // 'npm run snap' from the command line positioned at the
@@ -10,9 +11,9 @@ import { Card } from "./card"
 class Snap {
   private player1Score: number
   private player2Score: number
-  private deck: AnimalDeck
+  private deck: Deck
 
-  constructor(deck: AnimalDeck) {
+  constructor(deck: Deck) {
     this.player1Score = 0
     this.player2Score = 0
     this.deck = deck

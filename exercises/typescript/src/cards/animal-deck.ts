@@ -1,7 +1,9 @@
 import { Animal as animals } from "./animal"
 import { AnimalCard } from "./animal-card"
+import { Card } from "./card"
+import { Deck } from "./deck"
 
-export class AnimalDeck {
+export class AnimalDeck implements Deck {
   private readonly cards: AnimalCard[]
 
   constructor() {
@@ -37,7 +39,7 @@ export class AnimalDeck {
     }
   }
 
-  deal(): AnimalCard {
+  deal(): Card {
     return this.cards.splice(0, 1)[0]
   }
 }
