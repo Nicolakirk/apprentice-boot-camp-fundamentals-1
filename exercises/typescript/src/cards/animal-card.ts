@@ -1,11 +1,13 @@
-export class AnimalCard {
+import { Card } from "./card"
+
+export class AnimalCard implements Card {
   public readonly animal: string
 
   constructor(animal: string) {
     this.animal = animal
   }
 
-  snap(otherCard: AnimalCard): boolean {
+  snap(otherCard: Card): boolean {
     return otherCard && this.animal === otherCard.animal
   }
 

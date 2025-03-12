@@ -1,6 +1,7 @@
 import readline from "readline"
 import { AnimalDeck } from "./animal-deck"
-import { AnimalCard } from "./animal-card"
+
+import { Card } from "./card"
 
 // to execute the runnable code in this file, use the command
 // 'npm run snap' from the command line positioned at the
@@ -20,8 +21,8 @@ class Snap {
   }
 
   async play() {
-    let currentCard: AnimalCard | null = null
-    let previousCard: AnimalCard | null = null
+    let currentCard: Card | null = null
+    let previousCard: Card | null = null
 
     while (this.deck.getCards().length > 0) {
       const rl = readline.createInterface({
