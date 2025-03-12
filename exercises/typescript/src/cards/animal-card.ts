@@ -1,13 +1,13 @@
 import { Card } from "./card"
 
 export class AnimalCard implements Card {
-  public readonly animal: string
+  private readonly animal: string
 
   constructor(animal: string) {
     this.animal = animal
   }
 
-  snap(otherCard: Card): boolean {
+  snap(otherCard: AnimalCard): boolean {
     return otherCard && this.animal === otherCard.animal
   }
 

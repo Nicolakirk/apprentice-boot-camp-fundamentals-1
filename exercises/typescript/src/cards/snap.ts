@@ -3,6 +3,7 @@ import { AnimalDeck } from "./animal-deck"
 
 import { Card } from "./card"
 import { Deck } from "./deck"
+import { PlayingCardDeck } from "./playing-card-deck"
 
 // to execute the runnable code in this file, use the command
 // 'npm run snap' from the command line positioned at the
@@ -35,7 +36,7 @@ class Snap {
       rl.prompt()
 
       currentCard = this.deck.deal()
-      console.log(currentCard.animal)
+      console.log(currentCard.toString())
 
       for await (const line of rl) {
         if (line.length > 0 && line.charAt(0).toLowerCase() === 'a') {
@@ -75,6 +76,7 @@ class Snap {
 }
 
 const animalDeck = new AnimalDeck()
-const snap = new Snap(animalDeck)
+const playingCardDeck = new PlayingCardDeck()
+const snap = new Snap(playingCardDeck)
 
 snap.play()

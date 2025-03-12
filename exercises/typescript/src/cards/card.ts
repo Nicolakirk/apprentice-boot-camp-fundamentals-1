@@ -1,6 +1,8 @@
+import { AnimalCard } from "./animal-card"
+
 export interface Card {
-animal: string;
-snap:(otherCard: Card) => boolean
-toString:() => string
+
+snap(otherCard: Card): boolean
+toString(): string
 
 }
